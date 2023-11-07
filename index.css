@@ -17,6 +17,27 @@ main {
     padding: 60px;
 
 }
+
+.gridContainer {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 400px 400px 400px;
+}
+
+.boxOne {
+    width: 300px;
+    height: 500px;
+}
+
+.boxLarge {
+    width: 450px;
+    height: 650px;
+}
+
+.gridSectionImg {
+    width: 300px;
+}
+
 header {
     display: flex;
     flex-wrap: wrap;
@@ -50,4 +71,12 @@ footer {
     padding-left: 12px;
     padding-right: 12px;
     padding: 80px;
+}
+
+h2 {
+    color: aliceblue;
+}
+
+p {
+    color: aliceblue;
 }
