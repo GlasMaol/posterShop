@@ -6,7 +6,7 @@
 
 body {
     margin: 0 auto;
-    max-width: 1440;
+    max-width: 1440px;
     background-color: rgb(0, 0, 0);
     position: relative;
     width: 1440px;
@@ -22,19 +22,30 @@ main {
 }
 
 .gridContainer {
+    /*box-sizing: border-box;*/
     width: 1440px;
     margin: auto;
     display: grid;
     gap: 32px;
-    grid-template-columns: 400px 400px 400px;
+    /*grid-template-columns: 400px 400px 400px;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    /*grid-template-areas:
+    "box box box"
+    "box box box"
+    "large large .";*/
 
 }
 
 .boxOne {
-    height: 543px;
+    /*grid-area: box;*/
+    margin-bottom: 4rem;
+    /* height: 543px; */
 }
 
 .boxLarge {
+    /*grid-area: large;*/
+    grid-column: span 2;
     background-color: #FFFFFF;
     width: 450px;
     height: 650px;
@@ -46,7 +57,7 @@ main {
 
 .gridSectionImgLarge {
     width: 450px;
-}
+} 
 
 header {
     display: flex;
@@ -86,7 +97,6 @@ footer {
 }
 
 figcaption {
-    color: ;
     height: 12rem;
     display: flex;
     flex-direction: column;
@@ -116,6 +126,10 @@ p {
     color: #222222;
 }
 
+/*.captionLarge {
+    border: 1rem;
+}*/
+
 button {
     border: 0;
     font-family: 'Fira Sans', sans-serif;
@@ -126,7 +140,7 @@ button {
     height: 30px;
     border-radius: 4px;
     background-color: #E83F57;
-    padding: 8px, 16px, 8px, 16px;
+    
     gap: 10px;
 
 }
