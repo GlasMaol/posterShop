@@ -23,7 +23,7 @@ main {
 
 .gridContainer {
     /*box-sizing: border-box;*/
-    width: 1440px;
+    max-width: 1440px;
     margin: auto;
     display: grid;
     gap: 32px;
