@@ -1,148 +1,121 @@
-* {
+*, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    margin: 0 auto;
-    max-width: 1440px;
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    width: 1440px;
-    height: 3840px;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #222;
 }
 
-main {
+/* tar in img här istället för i html och ger allt backgroundvärden. No repeat gör att img repeterar inte */
+body header {
+    background-color: #3ddf7e;
+    background-image: url('/assets/ninjahead.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom; /*ger x y position*/
+    background-size: 25%;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    padding: 60px;
-    background-color: rgb(0, 0, 0);
-
+    align-items: center;
 }
 
-.gridContainer {
-    /*box-sizing: border-box;*/
-    max-width: 1440px;
-    margin: auto;
-    display: grid;
-    gap: 32px;
-    /*grid-template-columns: 400px 400px 400px;*/
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-    /*grid-template-areas:
-    "box box box"
-    "box box box"
-    "large large .";*/
-
-}
-
-.boxOne {
-    /*grid-area: box;*/
-    margin-bottom: 4rem;
-    /* height: 543px; */
-}
-
-.boxLarge {
-    /*grid-area: large;*/
-    grid-column: span 2;
-    background-color: #FFFFFF;
-    width: 450px;
-    height: 650px;
-}
-
-.gridSectionImg {
-    width: 400px;
-}
-
-.gridSectionImgLarge {
-    width: 450px;
-} 
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 80px;
-}
-
-.header-container {
-    position: relative;
-}
-
-.nav-container {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    padding: 20px;
+/* nav ikon position fritt från allt annat */
+body header img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 1rem;
+    left: 1rem;
 }
 
-.header-image {
-    align-self: center;
+/*text in header*/
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 5rem;
+}
+
+/* sätter grid på main och bestämmer bredd på grid container (som är main här) */
+body main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+/*varje article tar upp 2 spn som är 1/3 av griden*/
+body main article {
+    grid-column: auto / span 2;
+    color: white;
+}
+
+/*de 2 sista elementen är större med class boxLarge*/
+body main article.boxLarge {
+    grid-column: auto / span 3; /*auto är kort för grid-column-start och end*/
+    color: #222;
+    background-color: white;
+}
+
+/*varje bild tar upp 100% av sin del av griden*/
+.gridSectionImg {
     width: 100%;
 }
 
-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    background-color: rgb(66, 62, 62);
-    padding-left: 12px;
-    padding-right: 12px;
-    padding: 80px;
+/*rubrik i gridelementen*/
+body main article h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-figcaption {
-    height: 12rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-h2 {
-    color: aliceblue;
-}
-
-p {
-    color: aliceblue;
-}
-
-.h2BoxLarge {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 700;
-    color: #222222;
-    font-size: 34px;
-}
-
-.boxLargePText {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22.5px;
-    color: #222222;
-}
-
-/*.captionLarge {
-    border: 1rem;
-}*/
-
-button {
-    border: 0;
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+/*design av alla buttons*/
+body main article button {
+    appearance: none; /*ändrar utseendet till native controls*/
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .25rem;
+    background-color: #e73f57;
     color: white;
-    width: 139px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #E83F57;
-    
-    gap: 10px;
+    margin-top: 2rem;
+}
 
+body main article.boxLarge P {
+    margin: 1rem;
+}
+
+body main article.boxLarge h2 {
+    margin: 1rem;
+}
+
+body main article.boxLarge button {
+    margin: 1rem;
+    padding: 1rem 2rem;
+}
+
+body footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+body footer section {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+body footer section article h2 {
+    margin-bottom: 1rem;
+}
+
+body footer section article p {
+    line-height: 150%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Alegreya&family=EB+Garamond:ital,wght@1,700&family=Fira+Sans:wght@700&family=Montserrat&family=Open+Sans:wght@300;400&display=swap');
